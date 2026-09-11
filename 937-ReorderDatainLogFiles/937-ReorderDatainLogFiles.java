@@ -1,19 +1,16 @@
-// Last updated: 9/11/2026, 10:07:00 PM
+// Last updated: 9/11/2026, 10:08:37 PM
 1class Solution {
-2    public boolean isMonotonic(int[] nums) {
-3        boolean isIncreasing = true;
-4        boolean isDecreasing = true;
-5        for (int i =1; i<nums.length; i++){
-6            if (nums[i]>nums[i-1]){
-7                isDecreasing = false;
-8            }
-9            else if (nums[i]<nums[i-1]){
-10                isIncreasing = false;
+2    public int[][] transpose(int[][] matrix) {
+3        int n = matrix.length;
+4        int m = matrix[0].length;
+5
+6       int[][] result = new int[m][n];
+7
+8        for(int i=0; i<n; i++){
+9            for(int j=0; j<m; j++){
+10                result[j][i] = matrix[i][j];
 11            }
-12            if(!isIncreasing && !isDecreasing){
-13                return false;
-14            }
-15        }
-16        return true;
-17    }
-18}
+12        }
+13        return result;
+14    }
+15}
